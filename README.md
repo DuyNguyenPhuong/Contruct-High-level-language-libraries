@@ -235,3 +235,7 @@ This is a piece of code when we use the `CountryComparator` in the `getNodeBefor
       return nodeBefore;
     }
 ```
+
+This is the Demo
+
+![My Image](images/Demo.png)
