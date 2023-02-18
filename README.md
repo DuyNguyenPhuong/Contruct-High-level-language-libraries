@@ -1,14 +1,12 @@
-# HW4 Country Sorter List
+# Using Java to contruct Python libraries
 
 ## Overview
 
-The CountrySorterList program sorts the dataset based on the indicator, data file user want.
-The program can: 
-- Give the list of Top/ Bottom countries in the sorted lists (number of countries depends on users)
-- Add more Country objects based on the indicator in the right position
+While Python is famous for data analyzing, with many tools and libraries. Many of library contains built-in modules written in C. In this project, I recreated those libraries from scratch for users to understand how these libraries actually works through Comparable Class, Double Linked Listed, Hashmap,...
+
+We use the "CountryDatase" for a sample
 
 ## Usage
-To use the CountrySorterLost program, run the following commands after downloading the code:
 ```
 $ javac *.java
 $ java CountrySorterList
@@ -98,27 +96,12 @@ Then the program will print the result. For example, if we want to print the top
 10: Marshall Islands
 ```
 
-After, the program will print to the terminal the total number of fruit types, their original prices, and the final prices after the discount:
-```
-$ Number of fruits: 3
-$ Here are the original prices:
-$ apple: $50.00
-$ orange: $15.00
-$ banana: $25.00
-$ Here are the final prices: 
-$ apple: $20.00
-$ orange: $2.50
-$ banana: $7.50
-```
 
-## Prompt
+## Notice
 We use the CountryComparator class instead of having Country implement the interface Comparable. Because using CountryComparator will be much more organized. We don't want to have Country class implement Comparable because at some case Country object don't need to use the Comparable interface. 
 Therefore, we implement the Comparable in CountryComparator and only use it when we need to compare. This will make the program simple and organized.
 
 
-## Rubric
-
-Here we discuss how our project meets the rubric requirements of HW4
 
 ### User can get list of top X countries for each indicator
 
@@ -252,31 +235,3 @@ This is a piece of code when we use the `CountryComparator` in the `getNodeBefor
       return nodeBefore;
     }
 ```
-### README clear and complete
-Yes our README is clear and complete
-
-### Java-docs style documentation
-This is 1 example of our Java-docs style documentation
-```java
-    /**
-     * Print the list of Country objects on the top which have 
-     * the smallest indicator
-     * If the indicator is the Name, it will print the list of
-     * Countries on the top in alphabetical order (A-Z)
-     * @param topNumber (int) number of top Countries
-     * @return (String) the top Country objects with its position number
-     */
-    public String listTop(int topNumber){
-      String top = "";
-      Node currentNode = firstNode;
-      for (int i = 0; i< topNumber; i++){
-        top += String.valueOf(i+1);
-        top += ": ";
-        top += currentNode.data.getName();
-        top += "\n";
-        currentNode = currentNode.next;
-      }
-      return top;
-    }
-```
-
